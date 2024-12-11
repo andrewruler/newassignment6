@@ -1,0 +1,73 @@
+/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #111;  /* Dark background for the movie theme */
+  color: #fff;
+}
+
+/* Container for movies */
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create responsive grid */
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+  margin-top: 20px;
+  width: 1000px;
+}
+
+/* Styling for individual movie cards */
+.movies-container div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow around the movie */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for movie images */
+.movies-container div:hover {
+  transform: scale(1.05);  /* Zoom in slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
+}
+
+/* Movie poster styling */
+.movies-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure image fills the container */
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect for images */
+.movies-container div:hover img {
+  opacity: 0.8;  /* Slight fade on hover */
+}
+
+/* Loading state styling */
+.movies-container::before {
+  content: "Loading...";
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+/* When the movies array is empty or before data is fetched, show loading */
+.movies-container.empty::before {
+  visibility: visible;
+  font-size: 36px;
+  color: #ff4d4d;  /* Red loading text */
+}

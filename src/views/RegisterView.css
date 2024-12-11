@@ -1,0 +1,178 @@
+/* Global Styles */
+body {
+    background-color: #121212; /* Dark background for the whole page */
+    color: #fff; /* White text color */
+    font-family: Arial, sans-serif; /* Clean, modern sans-serif font */
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #007bff; /* Blue button */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff6f61; /* Red button hover */
+  }
+  
+  /* Container for the Movies View */
+  .movies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Header and Navigation */
+  header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header a {
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    color: #007bff; /* Blue hover for nav links */
+  }
+  
+  /* Genre List (Genres Component) */
+  .genres {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .genre-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  
+  .genres input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: #007bff; /* Blue accent for checkboxes */
+    transition: transform 0.2s ease;
+  }
+  
+  .genres input[type="checkbox"]:hover {
+    transform: scale(1.1); /* Hover effect for checkboxes */
+  }
+  
+  .genres label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+  
+  .genres label:hover {
+    color: #ff6f61; /* Red hover color */
+  }
+  
+  .genres input[type="checkbox"]:checked + label {
+    color: #007bff; /* Blue color when checked */
+  }
+  
+  /* Dynamic Content Area */
+  .dynamic-content {
+    flex: 1;
+    padding: 20px;
+    width: 80%;
+    background-color: #121212;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+  
+  /* Responsive Layout for Tablets and Small Screens */
+  @media screen and (max-width: 768px) {
+    .genres {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      padding: 15px;
+    }
+  
+    .genres input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .genres label {
+      font-size: 14px;
+    }
+  
+    .dynamic-content {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .genres {
+      grid-template-columns: 1fr; /* Single column for mobile */
+      padding: 10px;
+    }
+  
+    .genres input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .genres label {
+      font-size: 12px;
+    }
+  
+    .dynamic-content {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  

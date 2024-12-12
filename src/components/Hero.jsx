@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useUserContext } from "../contexts/UserContext";
 
 function Hero() {
-  const { userData } = useContext(useUserContext);
+  const { userData } = useUserContext();
 
   return (
     <>

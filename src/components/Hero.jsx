@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { useUserContext } from "../contexts/UserContext";
 
 function Hero() {
-  const { userData } = useContext(UserContext);
+  const { userData } = useContext(useUserContext);
 
   return (
     <>

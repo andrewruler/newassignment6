@@ -1,9 +1,10 @@
 
 import {Link} from 'react-router-dom';
 import LanguagesDropdown from './LanguagesDropdown';
-import { userData } from '../contexts/UserContext';
+import { useUserContext } from '../contexts/UserContext';
 
 function Header () {
+    const { userData } = useUserContext();
     console.log(userData.firstName);
     return (
     <div className = "NavWrapper">

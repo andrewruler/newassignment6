@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
+import { useCartContext } from '../contexts/CartContext';
 import './DetailView.css';
 
 function DetailView() {
   const navigate = useNavigate();
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
+  const { cart, setCart } = useCartContext();
 
   useEffect(() => {
     async function getMovie() {
@@ -30,6 +32,8 @@ function DetailView() {
       </div>
 
       <div className="movie-detail">
+        <button onClick={() => setCart((prevCart) => prevCart.set(params.id, { title: movie.original_title, url: movie.poster_path }))} className="buy-button">Buy</button>
+
         {movie.original_title && <h1 className="movie-title">{movie.original_title}</h1>}
         {movie.overview && <p className="movie-overview">{movie.overview}</p>}
         

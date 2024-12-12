@@ -1,13 +1,12 @@
 import "./RegisterView.css";
 import "../components/components.css";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Header";
-import { UserContext } from "../contexts/UserContext";
+import { useUserContext } from "../contexts/UserContext";
 
 function RegisterView() {
   const navigate = useNavigate();
-  const { updateUser } = useContext(UserContext);
+  const { updateUser } = useUserContext();
 
   function handleSignIn(event) {
     event.preventDefault();

@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 
 const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -54,4 +54,6 @@ const UserProvider = ({ children }) => {
   );
 };
 
-export { UserProvider, UserContext };
+export const useUserContext = () => {
+  return useContext(UserContext);
+}

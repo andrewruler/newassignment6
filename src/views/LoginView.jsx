@@ -1,12 +1,12 @@
 import "../components/components.css";
 import { useState, useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { useUserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Header";
 
 function LoginView() {
   const navigate = useNavigate();
-  const { updateUser, toggleLogin } = useContext(UserContext);
+  const { updateUser, toggleLogin } = useUserContext();
   const [password, setPass1] = useState("");
   const [newUsername, setNewUsername] = useState("");
 

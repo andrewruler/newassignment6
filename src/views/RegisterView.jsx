@@ -11,9 +11,16 @@ function RegisterView() {
   function handleSignIn(event) {
     event.preventDefault();
 
-    const fields = ["firstName", "lastName", "username", "email", "pass1", "pass2"];
+    const fields = [
+      "firstName",
+      "lastName",
+      "username",
+      "email",
+      "pass1",
+      "pass2",
+    ];
     let allFieldsFilled = true;
-   
+
     fields.forEach((field) => {
       const value = document.querySelector(`input[name="${field}"]`)?.value;
       if (!value) {
@@ -24,9 +31,9 @@ function RegisterView() {
         alert("Please fill in all fields.");
       }
     });
-    
-    const pass1 = document.querySelector(`input[name="${"pass1"}"]`)?.value
-    const pass2 = document.querySelector(`input[name="${"pass2"}"]`)?.value
+
+    const pass1 = document.querySelector(`input[name="${"pass1"}"]`)?.value;
+    const pass2 = document.querySelector(`input[name="${"pass2"}"]`)?.value;
 
     if (pass1 !== pass2) {
       allFieldsFilled = false;
@@ -34,8 +41,8 @@ function RegisterView() {
     }
 
     if (allFieldsFilled) {
-      navigate('../');
-    } 
+      navigate("../");
+    }
   }
 
   const genreList = [
@@ -66,38 +73,60 @@ function RegisterView() {
         </p>
         <form>
           <div>
-
-            <input type="text" name="firstName" placeholder="First Name"
-            onChange = {(e) => updateUser("firstName" , e.target.value)}
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              onChange={(e) => updateUser("firstName", e.target.value)}
             ></input>
 
-            <input type="text" name="lastName" placeholder="Last Name"
-            onChange = {(e) => updateUser("lastName" , e.target.value)}>
-            </input>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              onChange={(e) => updateUser("lastName", e.target.value)}
+            ></input>
 
-            <input type="text" name="username" placeholder="Username" 
-            onChange = {(e) => updateUser("username" , e.target.value)}>
-            </input>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              onChange={(e) => updateUser("username", e.target.value)}
+            ></input>
 
-            <input type="text" name="email" placeholder="Email"
-            onChange = {(e) => updateUser("email" , e.target.value)}>
-            </input>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              onChange={(e) => updateUser("email", e.target.value)}
+            ></input>
 
-            <input type="text" name="pass1" placeholder="Password"
+            <input
+              type="text"
+              name="pass1"
+              placeholder="Password"
               onChange={(e) => updateUser("pass", e.target.value)}
             ></input>
 
-            <input type="text" name="pass2" placeholder="Confirm Password"
+            <input
+              type="text"
+              name="pass2"
+              placeholder="Confirm Password"
             ></input>
-            
+
             <div className="genres">
-            {genreList.map((genre) => (
-              <div key={genre.id} className="genre-item">
-                <input type="checkbox" id={genre.id} value={genre.name} onChange = {() => updateUser("genres" , genre.name)}/>
-                <label htmlFor={genre.id}>{genre.name}</label>
-              </div>
-            ))}
-          </div>
+              {genreList.map((genre) => (
+                <div key={genre.id} className="genre-item">
+                  <input
+                    type="checkbox"
+                    id={genre.id}
+                    value={genre.name}
+                    onChange={() => updateUser("genres", genre.name)}
+                  />
+                  <label htmlFor={genre.id}>{genre.name}</label>
+                </div>
+              ))}
+            </div>
 
             <button
               type="submit"

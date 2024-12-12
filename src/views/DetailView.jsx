@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useCartContext } from '../contexts/CartContext';
-import './DetailView.css';
+import { useCartContext } from "../contexts/CartContext";
+import "./DetailView.css";
 
 function DetailView() {
   const navigate = useNavigate();
@@ -32,18 +32,56 @@ function DetailView() {
       </div>
 
       <div className="movie-detail">
-        <button onClick={() => setCart((prevCart) => prevCart.set(params.id, { title: movie.original_title, url: movie.poster_path }))} className="buy-button">Buy</button>
+        <button
+          onClick={() =>
+            setCart((prevCart) =>
+              prevCart.set(params.id, {
+                title: movie.original_title,
+                url: movie.poster_path,
+              })
+            )
+          }
+          className="buy-button"
+        >
+          Buy
+        </button>
 
-        {movie.original_title && <h1 className="movie-title">{movie.original_title}</h1>}
+        {movie.original_title && (
+          <h1 className="movie-title">{movie.original_title}</h1>
+        )}
         {movie.overview && <p className="movie-overview">{movie.overview}</p>}
-        
+
         <div className="movie-info">
-          {movie.release_date && <p><strong>Release Date:</strong> {movie.release_date}</p>}
-          {movie.runtime && <p><strong>Runtime:</strong> {movie.runtime} minutes</p>}
-          {movie.original_language && <p><strong>Original Language:</strong> {movie.original_language}</p>}
-          {movie.popularity && <p><strong>Popularity:</strong> {movie.popularity}</p>}
-          {movie.vote_average && <p><strong>Vote Average:</strong> {movie.vote_average}</p>}
-          {movie.vote_count && <p><strong>Vote Count:</strong> {movie.vote_count}</p>}
+          {movie.release_date && (
+            <p>
+              <strong>Release Date:</strong> {movie.release_date}
+            </p>
+          )}
+          {movie.runtime && (
+            <p>
+              <strong>Runtime:</strong> {movie.runtime} minutes
+            </p>
+          )}
+          {movie.original_language && (
+            <p>
+              <strong>Original Language:</strong> {movie.original_language}
+            </p>
+          )}
+          {movie.popularity && (
+            <p>
+              <strong>Popularity:</strong> {movie.popularity}
+            </p>
+          )}
+          {movie.vote_average && (
+            <p>
+              <strong>Vote Average:</strong> {movie.vote_average}
+            </p>
+          )}
+          {movie.vote_count && (
+            <p>
+              <strong>Vote Count:</strong> {movie.vote_count}
+            </p>
+          )}
         </div>
 
         {movie.poster_path && (
@@ -57,22 +95,23 @@ function DetailView() {
         <div className="trailers-section">
           <h2>Trailers</h2>
           <div className="trailers-grid">
-            {movie.videos && movie.videos.results.map((trailer) => (
-              <div key={trailer.id} className="trailer-tile">
-                <a
-                  href={`https://www.youtube.com/watch?v=${trailer.key}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="trailer-thumbnail"
-                    src={`https://img.youtube.com/vi/${trailer.key}/0.jpg`}
-                    alt={trailer.name}
-                  />
-                  <h3>{trailer.name}</h3>
-                </a>
-              </div>
-            ))}
+            {movie.videos &&
+              movie.videos.results.map((trailer) => (
+                <div key={trailer.id} className="trailer-tile">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="trailer-thumbnail"
+                      src={`https://img.youtube.com/vi/${trailer.key}/0.jpg`}
+                      alt={trailer.name}
+                    />
+                    <h3>{trailer.name}</h3>
+                  </a>
+                </div>
+              ))}
           </div>
         </div>
       </div>

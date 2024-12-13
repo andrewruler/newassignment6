@@ -1,0 +1,68 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    min-height: 150vh;
+  }
+  
+  h1 {
+    color: #e50914; /* Netflix-inspired red */
+    text-align: center;
+  }
+  
+  .cart-view {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+.cart-items {
+    display: inline;
+    flex-wrap: wrap; /* Allows wrapping of items into multiple rows */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds spacing between items */
+}
+
+.cart-item {
+    width: calc(25% - 20px); /* Adjust width (e.g., 25% for 4 items per row, minus gap) */
+    background: #1c1c1c; /* Slightly lighter black */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+    text-align: center;
+    display: inline-block;
+}
+  
+  .cart-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .cart-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #e50914;
+  }
+  
+  .cart-item h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #00aaff; /* Bright blue */
+  }
+  
+  .cart-item button {
+    background-color: #e50914; /* Red */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cart-item button:hover {
+    background-color: #ff4040; /* Lighter red */
+  }

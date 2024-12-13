@@ -1,11 +1,10 @@
-import './components.css';
+import './Footer.css'; 
 
 function Footer() {
   return (
     <footer>
       <h1>Questions?</h1>
-      <p>Contact us at: <a href="mailto:3gkKZ@example.com">3gkKZ@example.com</a></p>
-      <img className="logo" src="images/logo.png" alt="Cineflix logo" />
+      <p className="contact">Contact us at: <a href="mailto:3gkKZ@example.com">3gkKZ@example.com</a></p>
       <p>© 2022 Cineflix. All rights reserved.</p>
 
       <ul>

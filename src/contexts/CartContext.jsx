@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react';
+import {createContext, useState, useContext} from 'react';
 import { Map } from 'immutable';
 
 const CartContext = createContext();

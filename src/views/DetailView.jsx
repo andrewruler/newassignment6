@@ -35,7 +35,7 @@ function DetailView() {
         <button
           onClick={() =>
             setCart((prevCart) =>
-              prevCart.set(params.id, {
+              prevCart.set(movieId, {
                 title: movie.original_title,
                 url: movie.poster_path,
               })

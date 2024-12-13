@@ -571,6 +571,8 @@ footer {
   text-align: center;
   padding: 20px 0;
   animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  bottom: 0;
 }
 
 footer ul li a:hover {

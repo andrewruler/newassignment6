@@ -35,7 +35,7 @@ function GenreView() {
       </div>
       <div className="movies-container">
         {movies.map((movie) => (
-          <div key={movie.id}>
+          <div key={movie.id} className="movie">
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt={movie.title}

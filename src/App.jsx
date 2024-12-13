@@ -4,6 +4,7 @@ import RegisterView from "./views/RegisterView";
 import LoginView from "./views/LoginView";
 import MovieView from "./views/MoviesView";
 import DetailView from "./views/DetailView";
+import CartView from "./views/CartView";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
 import { CartProvider } from "./contexts/CartContext";
@@ -21,6 +22,7 @@ function App() {
                 <Route path="Genres/:genreId" element={<GenreView />} />
                 <Route path="Detail/:movieId" element={<DetailView />} />
               </Route>
+              <Route path="cart" element={<CartView />} />
               <Route path="Register" element={<RegisterView />} />
               <Route path="Login" element={<LoginView />} />
             </Routes>

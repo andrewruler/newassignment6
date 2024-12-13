@@ -1,73 +1,52 @@
-/* Reset and general styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* GenreView.css */
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #111;  /* Dark background for the movie theme */
-  color: #fff;
-}
-
-/* Container for movies */
+/* Container for the 4x4 movie grid layout */
 .movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create responsive grid */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
   justify-items: center;
-  margin-top: 20px;
-  width: 1000px;
+  align-items: center;
 }
 
-/* Styling for individual movie cards */
-.movies-container div {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow around the movie */
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Hover effect for movie images */
-.movies-container div:hover {
-  transform: scale(1.05);  /* Zoom in slightly */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
-}
-
-/* Movie poster styling */
-.movies-container img {
+/* Individual movie items */
+.movie {
   width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Ensure image fills the container */
+  max-width: 200px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie img {
+  width: 100%;
   border-radius: 10px;
-  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for images */
-.movies-container div:hover img {
-  opacity: 0.8;  /* Slight fade on hover */
+.movie:hover {
+  transform: scale(1.05);
 }
 
-/* Loading state styling */
-.movies-container::before {
-  content: "Loading...";
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
+/* Pagination buttons */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 20px;
 }
 
-/* When the movies array is empty or before data is fetched, show loading */
-.movies-container.empty::before {
-  visibility: visible;
-  font-size: 36px;
-  color: #ff4d4d;  /* Red loading text */
+.pagination button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
 }

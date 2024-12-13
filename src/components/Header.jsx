@@ -12,6 +12,7 @@ function Header () {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/Movies">Movies</Link></li>
+                <li><Link to="/cart">Movie Cart</Link></li>
                 <li id = "register"><Link to="/Register">Register</Link></li>
                 <li id ='login'><Link to="/Login">Log In</Link></li>
                 <LanguagesDropdown></LanguagesDropdown>

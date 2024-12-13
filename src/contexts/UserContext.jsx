@@ -44,6 +44,7 @@ export const UserProvider = ({ children }) => {
   }
 
   const checkLogin = () => {
+    console.log(isLoggedIn);
     return isLoggedIn;
   }
 

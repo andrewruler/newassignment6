@@ -33,9 +33,9 @@ function GenreView() {
         <button onClick={() => navigate(-1)}>Back</button>
         <button onClick={() => navigate(1)}>Next</button>
       </div>
-      <div className="movies-container">
+      <div className="movies-grid">
         {movies.map((movie) => (
-          <div key={movie.id} className="movie">
+          <div key={movie.id} className="movie-card">
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt={movie.title}

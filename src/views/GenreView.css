@@ -1,9 +1,7 @@
-/* GenreView.css */
-
 /* Container for the 4x4 movie grid layout */
-.movies-container {
+.movies-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
   justify-items: center;
@@ -11,20 +9,20 @@
 }
 
 /* Individual movie items */
-.movie {
+.movie-card {
   width: 100%;
   max-width: 200px;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.movie img {
+.movie-card img {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.movie:hover {
+.movie-card:hover {
   transform: scale(1.05);
 }
 
